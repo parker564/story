@@ -1,0 +1,126 @@
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+0122:~ Mac$ 
+0122:~ Mac$ 
+0122:~ Mac$ cd desktop
+0122:desktop Mac$ mkdir story
+0122:desktop Mac$ cd story
+0122:story Mac$ touch chapter1.txt
+0122:story Mac$ open chapter1.txt
+0122:story Mac$ git init
+Initialized empty Git repository in /Users/Mac/Desktop/story/.git/
+0122:story Mac$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        chapter1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+0122:story Mac$ git add chapter1.txt
+0122:story Mac$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   chapter1.txt
+
+0122:story Mac$ 
+0122:story Mac$ git commit -m "Complete Chapter 1"
+[master (root-commit) 2a4f54d] Complete Chapter 1
+ Committer: Ike Parker <Mac@0122.fios-router.home>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 chapter1.txt
+0122:story Mac$ git logs
+git: 'logs' is not a git command. See 'git --help'.
+
+The most similar command is
+        log
+0122:story Mac$ git log
+commit 2a4f54dbe3353da0531b31f10a816288361b72b7 (HEAD -> master)
+Author: Ike Parker <Mac@0122.fios-router.home>
+Date:   Fri Feb 5 10:29:49 2021 -0500
+
+    Complete Chapter 1
+0122:story Mac$ 
+0122:story Mac$ 
+0122:story Mac$ 
+0122:story Mac$ touch chapter2.txt chapter3.txt
+0122:story Mac$ 
+0122:story Mac$ 
+0122:story Mac$ 
+0122:story Mac$ ls
+chapter1.txt    chapter2.txt    chapter3.txt
+0122:story Mac$ ls -l
+total 8
+-rw-r--r--@ 1 Mac  staff  27 Feb  5 10:23 chapter1.txt
+-rw-r--r--  1 Mac  staff   0 Feb  5 10:35 chapter2.txt
+-rw-r--r--  1 Mac  staff   0 Feb  5 10:35 chapter3.txt
+0122:story Mac$ open chpter2.txt
+The file /Users/Mac/Desktop/story/chpter2.txt does not exist.
+0122:story Mac$ open chapter2.txt
+0122:story Mac$ open chapter3.txt
+\0122:story Mac$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        chapter2.txt
+        chapter3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+0122:story Mac$ git add .
+0122:story Mac$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   chapter2.txt
+        new file:   chapter3.txt
+
+0122:story Mac$ git commit -m "Commit chapters 2 and 3"
+[master f00cf8f] Commit chapters 2 and 3
+ Committer: Ike Parker <Mac@0122.fios-router.home>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 2 insertions(+)
+ create mode 100644 chapter2.txt
+ create mode 100644 chapter3.txt
+0122:story Mac$ open chapter3.txt
+0122:story Mac$ git diff chapter3.txt
+diff --git a/chapter3.txt b/chapter3.txt
+index ffe0f0f..081ee87 100644
+--- a/chapter3.txt
++++ b/chapter3.txt
+@@ -1 +1 @@
+-This is chapter 3
+\ No newline at end of file
++This is chapter 3 ygutguygu asdajnjk @#$%^
+\ No newline at end of file
+0122:story Mac$ git checkout chapter3.txt
+Updated 1 path from the index
+0122:story Mac$ 
